@@ -1,0 +1,123 @@
+.container{
+    width: 600px;
+    margin:auto;
+    background-color: lightgrey;
+  }
+  
+  .text {
+    text-align: center;
+  }
+  
+  .icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  
+  #grid > div{
+     margin: 20px 10px;
+     width: 120px;
+     height: 120px;
+     background-color: #ffc83d;
+     border: 1px solid #3889c4;
+     border-radius: 10px;
+  }
+  
+
+  .icon {
+     font-size: 80px;
+     text-align: center;
+     visibility: visible;
+     opacity:0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+  }
+  
+  .disability {
+     pointer-events: none;
+     cursor:wait;
+  }
+  
+  .show {
+     animation-name: rotation;
+     animation-duration: .5s;
+     background-color:white;
+     border: 1px solid #3889c4;
+     border-radius: 10px;
+     visibility: visible;
+     opacity: 1;
+  }
+  
+  .find {
+     animation-name: found;
+     animation-duration: .5s;
+     background-color:#3889c4;
+     border: 1px solid #3889c4;
+     border-radius: 10px;
+  }
+  
+  .button{
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffc83d;
+    border: 1px solid #3889c4;
+    border-radius: 5px;
+  }
+  
+  .button:hover{
+    background-color: #16486c;
+    border:none;
+  }
+  
+   #finish, #finishLose {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+  
+    #finish.attiva, #finishLose.attiva {
+      display: block;
+    }
+    
+    #finish h2, #finishLose h2, #finishLose p{
+      margin-top: 20px;
+    }
+  
+  
+  @keyframes found{ 
+   from { 
+      transform: rotate(0deg);
+     } 
+    to { 
+     transform: rotate(360deg);	 
+    }
+  }
+  
+  @keyframes rotation {
+     from {
+      transform: perspective(300px) rotate3d(0, 1, 0, 80deg);
+      animation-timing-function: ease-in;
+     }
+  
+     50% {
+      transform: perspective(300px) rotate3d(0, 1, 0, -10deg);
+      animation-timing-function: ease-in;
+     }
+  
+     to {
+      transform: perspective(300px);
+      animation-timing-function: ease-in;
+     }
+  }

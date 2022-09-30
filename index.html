@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Memory in Js" content="memory in js" />
+    <title>Gioco Memory Cards</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container icone" id="grid"></div>
+    <div class="container text">
+      <input type="button" id="button" class="button" onclick="start()" value="Ricomincia" />
+      <div id="timer">Time:</div>
+    </div>
+    <div id="finish">
+      <div class="finMessage">
+        <h2>Congratulazioni hai risolto il gioco</h2>
+        <p><input type="button" class="button" onclick="playAgain()" value="Gioca di nuovo!" /></p>
+      </div>
+    </div>
+    <div id="finishLose">
+      <div class="finMessage">
+        <h2>Sei proprio una schiappa!!!</h2>
+        <p>Non sei riuscito a trovare tutte le carte in 2 minuti..</p>
+        <p><input type="button" class="button" onclick="playAgain()" value="Ritenta!" /></p>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
