@@ -28,7 +28,7 @@ function timerStart () {
     interval = setInterval (function() {
         timer.innerHTML = `Tempo: ${m} min ${s} sec`;
         s--;
-        if(s==0 && m!==0){
+        if(s==0){
             m--;
             s=59;
         } if(s==0 && m==0){
@@ -115,20 +115,19 @@ function display(eventclick){
 // funzione per la finestra finale, se vengono indovinate tutte le carte
 let finish = document.getElementById('finish');
 let finishLose = document.getElementById('finishLose')
-let timer = document.querySelector('timer');
+let find = document.getElementsByClassName('find');
+console.log(find)
 
 function openFinish(){
-    let found = document.getElementsByClassName('find');
-    console.log(found)
-    if(found.lenght==16){
+    let timer = document.getElementById('timer');
+
+    if(find>=16){
         clearInterval(interval);
         finish.classList.add('attiva');
-        document.getElementById('totale').innerHTML=timer.innerHTML;
         closeFinish();
     } else if(timer<=0){
         clearInterval(interval);
         finishLose.classList.add('attiva');
-        document.getElementById('totale').innerHTML=timer.innerHTML;
         closeFinish();
     }
 }
