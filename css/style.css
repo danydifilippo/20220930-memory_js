@@ -93,7 +93,7 @@ body {
     border:none;
   }
   
-   #finish, #finishLose {
+   #finish, #lose {
       display: none;
       justify-content: center;
       align-items: center;
@@ -105,11 +105,13 @@ body {
       left: 0;
   }
   
-    #finish.attiva, #finishLose.attiva {
-      display: block;
+    #finish.attiva, #lose.attiva {
+      display: flex;
+      font-size: 250%;
+      text-align: center;
     }
     
-    #finish h2, #finishLose h2, #finishLose p{
+    #finish h2, #lose h2, #lose p{
       margin-top: 20px;
     }
   
