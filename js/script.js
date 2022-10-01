@@ -23,16 +23,18 @@ function lancia(a) {
 
 
 function timerStart () {
-    let s=59, m=2;
+    let s=30, m=1;
     let timer=document.getElementById('timer');
     interval = setInterval (function() {
-        timer.innerHTML = `Tempo: ${m} min ${s} sec`;
+        timer.innerHTML = `Hai a disposizione: ${m} min ${s} sec per trovare tutte le carte`;
         s--;
-        if(s==0){
-            m--;
-            s=59;
-        } if(s==0 && m==0){
-            openFinish()
+    if(s==0 && m===1){
+        clearInterval(interval);
+        let finishLose = document.getElementById('finishLose')
+        finishLose.classList.add('attiva');
+        }else{
+        m--;
+        s=59;
         }
     },1000);
 }
@@ -114,20 +116,14 @@ function display(eventclick){
 
 // funzione per la finestra finale, se vengono indovinate tutte le carte
 let finish = document.getElementById('finish');
-let finishLose = document.getElementById('finishLose')
-let find = document.getElementsByClassName('find');
-console.log(find)
+
+
 
 function openFinish(){
-    let timer = document.getElementById('timer');
-
-    if(find>=16){
+    let find = document.getElementsByClassName('find');
+    if(find.length>=16){
         clearInterval(interval);
         finish.classList.add('attiva');
-        closeFinish();
-    } else if(timer<=0){
-        clearInterval(interval);
-        finishLose.classList.add('attiva');
         closeFinish();
     }
 }
