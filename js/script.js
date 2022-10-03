@@ -130,6 +130,7 @@ function display(eventclick){
 // funzioni per le finestre finali: 
 let finish = document.getElementById('finish');
 
+
 //se vengono indovinate tutte le carte viene inserita la classe attiva alla finestra
 function openFinish(){
     let find = document.getElementsByClassName('find');
