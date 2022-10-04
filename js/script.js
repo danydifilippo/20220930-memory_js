@@ -33,9 +33,12 @@ function lancia(a) {
 function timerStart () {
     let s=60;
     let timer=document.getElementById('timer');
+    let timing=document.getElementById('timing')
     interval = setInterval (function() {
         timer.innerHTML = `Hai a disposizione: ${s} secondi per trovare tutte le carte`;
         s--;
+        let seconds = 60 - s
+        timing.innerHTML = `Hai impiegato ${seconds} secondi!`
         if(s<0){
             // appena finisce il tempo si attiva la classe al messaggio di 'ritenta' e pulisce l'intervallo
             clearInterval(interval);
@@ -131,12 +134,14 @@ function display(eventclick){
 let finish = document.getElementById('finish');
 
 
+
 //se vengono indovinate tutte le carte viene inserita la classe attiva alla finestra
 function openFinish(){
     let find = document.getElementsByClassName('find');
     if(find.length>=16){
         clearInterval(interval);
         finish.classList.add('attiva');
+        document.getElementById("totalTime").innerHTML = timing.innerHTML;
         closeFinish();
     }
 }
